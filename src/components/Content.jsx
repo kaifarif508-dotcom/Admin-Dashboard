@@ -64,7 +64,7 @@ const Content = () => {
 
 
       {/* RIGHT SECTION */}
-      <div className='flex lg:flex-row  flex-col gap-5 w-full lg:w-[87.5]'>
+      <div className='flex lg:flex-row   flex-col gap-5 w-full '>
 
         <RightCards
           righttext={<p>Users</p>}

@@ -17,7 +17,7 @@ const RightCards = ({
 
   return (
 
-    <div className={`w-full p-5 rounded-3xl 
+    <div className={`w-full   p-5 rounded-3xl 
     ${isDark ? "bg-[#1D1D29] text-white" : "bg-white text-black"}`}>
 
       <p className='text-lg lg:text-xl'>{righttext}</p>
@@ -32,7 +32,7 @@ const RightCards = ({
 
 
       {/* CONTENT */}
-      <div className='flex flex-col md:flex-row justify-between items-center gap-6 mt-6'>
+      <div className='flex flex-col  md:flex-row justify-between items-center gap-6 mt-6'>
 
         {/* LEFT INFO */}
         <div className='flex flex-col gap-3'>

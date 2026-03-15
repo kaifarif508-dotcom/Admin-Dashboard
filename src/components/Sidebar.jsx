@@ -20,7 +20,7 @@ const Sidebar = () => {
     {/* Mobile Menu Button */}
 
     <button 
-      className="lg:hidden fixed top-4 left-4 z-99  text-3xl"
+      className={`lg:hidden fixed top-4 left-4 z-99  text-3xl  ${isDark ? " text-white" : " text-black"}`}
       onClick={()=>setOpen(!open) }
     >
       <HiMenu />
