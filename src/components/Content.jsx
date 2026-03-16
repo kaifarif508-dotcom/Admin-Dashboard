@@ -11,8 +11,9 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 
 import UserChart from '../components/Chart'
 import { useTheme } from '../context/ThemeContext'
+import Login from './Login';
 
-const Content = () => {
+const Content = ({setLogin, login}) => {
 
   const { isDark } = useTheme()
 
@@ -32,6 +33,7 @@ const Content = () => {
             carddata={<h1>10</h1>}
             cardup={<IoIosArrowRoundUp />}
             cardratio={<span>8.2</span>}
+            cardlast={<p>since last month</p>}
           />
 
           <Card
@@ -40,6 +42,7 @@ const Content = () => {
             carddata={<h1>20</h1>}
             cardup={<IoIosArrowRoundDown />}
             cardratio={<span>2.6</span>}
+             cardlast={<p>since last month</p>}
           />
 
           <Card
@@ -48,6 +51,7 @@ const Content = () => {
             carddata={<h1>2</h1>}
             cardup={<IoIosArrowRoundUp />}
             cardratio={<span>10.7</span>}
+             cardlast={<p>since last month</p>}
           />
 
           <Card
@@ -56,13 +60,18 @@ const Content = () => {
             carddata={<h1>16</h1>}
             cardup={<IoIosArrowRoundDown />}
             cardratio={<span>7.8</span>}
+             cardlast={<p>since last month</p>}
           />
 
         </div>
 
       </div>
+{
+  login && (
+<Login setLogin={setLogin}/>
 
-
+  )
+}
       {/* RIGHT SECTION */}
       <div className='flex lg:flex-row   flex-col gap-5 w-full '>
 

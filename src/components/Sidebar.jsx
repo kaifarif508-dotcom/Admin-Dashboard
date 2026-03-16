@@ -7,16 +7,18 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosLogIn } from "react-icons/io";
 import { HiMenu } from "react-icons/hi";
 import { useTheme } from '../context/ThemeContext';
+import Login from './Login';
 
-const Sidebar = () => {
+const Sidebar = ({ setLogin}) => {
 
   const { isDark } = useTheme()
+  // const [login, setLogin] = useState(false)
   const [open,setOpen] = useState(false)
 
   return (
     <>
     
-    <div className='relative h-full '>
+    <div className=' h-full '>
     {/* Mobile Menu Button */}
 
     <button 
@@ -67,7 +69,9 @@ const Sidebar = () => {
             <IoSettingsOutline className='text-2xl'/> Setting
           </li>
 
-          <li className='flex items-center gap-4 hover:bg-[#F2F6FE] hover:text-black py-2 rounded-lg px-4 cursor-pointer'>
+          <li onClick={()=>{
+            setLogin(true)
+          }} className='flex items-center gap-4 hover:bg-[#F2F6FE] hover:text-black py-2 rounded-lg px-4 cursor-pointer'>
             <IoIosLogIn className='text-2xl'/> Login
           </li>
 

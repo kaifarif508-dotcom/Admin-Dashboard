@@ -5,8 +5,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
 import { useTheme } from "../context/ThemeContext";
+import { useUser } from "../context/UserContext";
 
 const Nav = () => {
+  const {user}= useUser()
 
   const { isDark } = useTheme()
   const [dates, setDates] = useState([null, null])
@@ -48,16 +50,24 @@ const Nav = () => {
 
 
           {/* Profile */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 overflow-hidden">
+            {
+              user.profile ? (
+                <img
+                  className="h-10 w-10 rounded-full object-cover"
+                  
+                  src={user.profile}
+                  alt="Profile-Image"
+                />
 
-            <img
-              className="h-10 w-10 rounded-full object-cover"
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
-              alt=""
-            />
+              ) : (
+                <img className="h-10 w-10 object-cover rounded-full" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" alt="default-profile-image" />
+              )
+            }
+
 
             {/* hide name on mobile */}
-            <p className="text-lg hidden sm:block">Johnson</p>
+            <p className="text-lg hidden sm:block">{ user.username ? user.username : "Jahson"} </p>
 
           </div>
 

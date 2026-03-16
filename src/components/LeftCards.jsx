@@ -1,13 +1,13 @@
 import React from 'react'
 import { useTheme } from '../context/ThemeContext'
 
-const LeftCards = ({ carddata, cardicon, cardtext, cardup, cardratio }) => {
+const LeftCards = ({ carddata, cardicon, cardtext, cardup, cardratio, cardlast }) => {
 
   const { isDark } = useTheme()
 
   return (
 
-    <div className={`w-full p-5 rounded-3xl  
+    <div className={`w-full p-5 rounded-3xl    
     ${isDark ? "bg-[#1D1D29] text-white" : "bg-white text-black"}`}>
 
       {/* top */}
@@ -40,8 +40,8 @@ const LeftCards = ({ carddata, cardicon, cardtext, cardup, cardratio }) => {
           {cardratio}%
         </span>
 
-        <p className='opacity-70'>
-          since last month
+        <p className='opacity-70 '>
+          {cardlast}
         </p>
 
       </div>
